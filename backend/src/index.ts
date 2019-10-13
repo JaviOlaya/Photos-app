@@ -1,5 +1,8 @@
 import app from './app';
-app.listen(3000,()=>{
-console.log('Servidor funcionando en puerto',3000);
-    
-});
+
+async function main() {
+    await app.listen(app.get('port'));
+    console.log('Servidor funcionando en puerto', app.get('port'));    
+}
+
+main();
