@@ -1,5 +1,5 @@
 import {Schema, model, Document} from 'mongoose';
-import { string } from 'prop-types';
+
 
 const schema = new Schema({
     title: String,

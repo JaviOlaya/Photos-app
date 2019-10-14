@@ -4,9 +4,9 @@ import path from 'path';
 
 const storage = multer.diskStorage({
     destination: 'uploads',
-    filename:(req, res, cb) => {
+    filename:(req, file, cb) => {
         cb(null, uuid() + path.extname(file.originalname));
     }
 });
 
-export default storage;
+export default multer({storage});
