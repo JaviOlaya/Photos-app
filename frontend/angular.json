@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootswatch/dist/materia/bootstrap.min.css",
+              "node_modules/bootswatch/dist/cyborg/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
