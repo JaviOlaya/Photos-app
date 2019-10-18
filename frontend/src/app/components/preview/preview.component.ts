@@ -38,4 +38,15 @@ export class PreviewComponent implements OnInit {
       err => console.log(err)
     )
   }
+  updatePhoto(title: HTMLInputElement, description: HTMLTextAreaElement): boolean{
+
+    this.photoService.updatePhoto(this.id, title.value, description.value)
+    .subscribe(
+      res => {
+        this.router.navigate(['/photos'])
+      },
+      error => console.log(error)
+    )
+    return false;
+  }
 }

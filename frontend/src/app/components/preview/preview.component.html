@@ -10,13 +10,13 @@
     </div> 
     <div class="col-md-7">
         <div class="card">
-            <form action="" class="card-body">
+            <form action="" class="card-body" (submit)="updatePhoto(title, description)">
                 <div class="form-group">
                     <input type="text" class="form-control" 
-                    placeholder="Título de la foto" [value]="photo.title">
+                    placeholder="Título de la foto" [value]="photo.title" #title>
                 </div>
                 <div class="form-group">
-                    <textarea class="rounded" rows="2" placeholder="Descripción de la foto " [value]="photo.description"></textarea>
+                    <textarea class="rounded" rows="2" placeholder="Descripción de la foto " [value]="photo.description" #description></textarea>
                 </div>
                 <button class="btn btn-primary btn-block">
                     Actualizar
