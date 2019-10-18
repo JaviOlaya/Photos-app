@@ -1,1 +1,32 @@
-
+<div class="row" *ngIf="!photo; else mainContent">
+    <h1>Cargando...</h1>
+</div>
+<ng-template #mainContent>
+<div class="row">
+    <div class="col-md-5">
+        <div class="card">
+            <img [src]="'http://localhost:4000/' + photo.imagePath" class="img-fluid">
+        </div>
+    </div> 
+    <div class="col-md-7">
+        <div class="card">
+            <form action="" class="card-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" 
+                    placeholder="Título de la foto" [value]="photo.title">
+                </div>
+                <div class="form-group">
+                    <textarea class="rounded" rows="2" placeholder="Descripción de la foto " [value]="photo.description"></textarea>
+                </div>
+                <button class="btn btn-primary btn-block">
+                    Actualizar
+                </button>
+            </form>
+        </div>
+    </div>       
+</div>
+<button class="btn btn-danger mt-1" (click)="deletePhoto(photo._id)">
+    Borrar
+</button>
+</ng-template>
+   

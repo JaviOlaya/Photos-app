@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PhotoService}from '../../services/photo-service.service';
+import {Router} from '@angular/router';
 interface HtmlInputEvent extends Event{
   target: HTMLInputElement & EventTarget;
 }
@@ -12,7 +13,7 @@ export class PhotoFormComponent implements OnInit {
 
   file: File; 
   photoSelected: string | ArrayBuffer ;
-  constructor(private  photoService: PhotoService) { }
+  constructor(private  photoService: PhotoService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -28,7 +29,9 @@ export class PhotoFormComponent implements OnInit {
 
   uploadPhoto(title: HTMLInputElement, description: HTMLTextAreaElement): boolean {
     this.photoService.createPhoto(title.value, description.value, this.file)
-    .subscribe(res => console.log(res), err => console.log(err))
+    .subscribe(res => {
+        this.router.navigate(['/photos']);
+    }, err => console.log(err))
     return false; // se introduce para evitar el reinicio 
   }
 }
