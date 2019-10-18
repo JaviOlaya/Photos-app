@@ -8,7 +8,7 @@
             <img [src]="'http://localhost:4000/' + photo.imagePath" class="img-fluid">
         </div>
     </div> 
-    <div class="col-md-7">
+    <div class="col-md-4">
         <div class="card">
             <form action="" class="card-body" (submit)="updatePhoto(title, description)">
                 <div class="form-group">
@@ -16,7 +16,8 @@
                     placeholder="Título de la foto" [value]="photo.title" #title>
                 </div>
                 <div class="form-group">
-                    <textarea class="rounded" rows="2" placeholder="Descripción de la foto " [value]="photo.description" #description></textarea>
+                    <textarea class="w-100 rounded" rows="2" 
+                    placeholder="Descripción de la foto " [value]="photo.description" #description></textarea>
                 </div>
                 <button class="btn btn-primary btn-block">
                     Actualizar
@@ -29,4 +30,3 @@
     Borrar
 </button>
 </ng-template>
-   
